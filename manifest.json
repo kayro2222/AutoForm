@@ -1,0 +1,36 @@
+{
+	"name":"AutoForm",
+	"manifest_version": 2,
+	"description": "AutoForm",
+	"version": "1.0",
+	"permissions":[
+		"unlimited_storage",
+		"notifications",
+		"contextMenus",
+		"cookies",
+		"storage",
+		"idle",
+		"tabs",
+		"activeTab"
+	],
+	"icons": {
+		"16": "images/favicon.png"
+	},
+	"browser_action": {
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [
+		{
+			"matches": [
+				"<all_urls>"
+			],
+			"js": [
+				"js/jquery.min.js",
+				"js/app.js"
+			],
+			"run_at": "document_end",
+			"persistent": false
+		}
+	]
+
+}
